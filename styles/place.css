@@ -1,0 +1,148 @@
+/* css large and small screen view in same code  */
+:root {
+  --primary-color: #002776;
+  --secondary-color: #ffdf00;
+  --background-color: #002776;
+  --nigeria-green: #009c3b;
+  --text-color: #ffffff;
+  --background-white: #ffffff;
+  --accent1-color: #a43312;
+  --accent2-color: #381d2a;
+  --heading-font: "Roboto", system-ui;
+  --paragraph-font: "Roboto", system-ui;
+  --nav-background-color: var(--primary-color);
+  --nav-link-color: #ffffff;
+  --nav-hover-link-color: var(--secondary-color);
+  --nav-hover-background-color: var(--accent1-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%; /* Ensure the body takes up the full height */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background-white); /* Set background to white */
+  color: var(--text-color);
+}
+
+h2 {
+  padding-left: 10px;
+  background-color: hsla(115, 91%, 48%, 0.7); /* Low opacity white background */
+  border-radius: 8px;
+}
+
+header {
+  background-color: var(--nigeria-green);
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+/* Hero image setup */
+.hero {
+  flex: 1; /* Allows the hero section to grow and take available space */
+  position: relative;
+  width: 100%;
+  height: auto; /* Adjust the height based on the image/content */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire section without stretching */
+}
+
+/* Floating sections for weather and attractions */
+.weather, .attractions {
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7); /* Low opacity white background */
+  color: var(--background-color);
+  border-radius: 8px;
+  position: absolute;
+}
+
+.attractions {
+  width: 40%; /* Adjust width for large view */
+  top: 22%; /* Place weather section at 10% from top */
+  left: 5%; /* Place it 5% from the left */
+
+}
+
+.weather {
+  width: 40%; /* Adjust width for large view */
+  bottom: 33%; /* Place attractions section near the bottom */
+  right: 5%; /* Place it 5% from the right */
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.weather-icon {
+  width: 40px;
+}
+
+ul {
+  padding: 7px;
+  list-style-type: none;
+}
+
+ul li {
+  padding: 3px;
+}
+
+/* Footer styling */
+footer {
+  background-color: var(--nigeria-green);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+ 
+}
+
+/* Footer message */
+footer::after {
+  content: "Thanks for visiting!";
+  display: block;
+  font-size: 1rem;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 600px) {
+  /* Ensure .weather and .attractions are stacked under the hero image */
+  .weather, .attractions {
+    width: 100%; /* Make them take up full width */
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background */
+    margin: 0; /* Remove margin */
+    position: static; /* Remove absolute positioning for stacking */
+    margin-bottom: 20px;
+  }
+
+  .weather-details {
+    flex-direction: column; /* Stack weather details vertically */
+  }
+
+  /* Ensure the hero image covers the full width */
+  .hero img {
+    width: 100%;
+    height: auto; /* Ensure correct height scaling */
+  }
+
+  /* Footer should follow after .attractions */
+  footer {
+    position: static; /* Make sure footer is positioned normally */
+    margin-bottom: 0.5rem;
+    height: auto;
+  }
+}
