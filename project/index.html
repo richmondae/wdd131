@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Richmond's Photography | Let's Travel | Home</title>
+</head>
+<body>
+<div id="content">
+    <header>
+        <a id="logo_link" href="index.html">
+            <img class="logo" src="Images/rsp_logo.png" alt="Richmond's Photography Logo">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Travel Blog</a>
+        </nav>
+    </header> 
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <div class="numbertext">1 / 6</div>
+                <img src="Images/mountain view.jpg" alt="Mountain view dirt road" style="width:100%">            
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">2 / 6</div>
+            <img src="Images/barbeach lagos.jpeg" alt="bar beach view" style="width:100%">           
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">3 / 6</div>
+            <img src="Images/rockies.jpeg" alt="Rock shaped like a boot" style="width:100%">           
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">4 / 6</div>
+            <img src="Images/udi hills.jpeg" alt="Road in Death Valley" style="width:100%">            
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">5 / 6</div>
+            <img src="Images/mambila plauteu farm.jpeg" alt="Mambila farm" style="width:100%">            
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">6 / 6</div>
+            <img src="Images/waterfall.jpeg" alt="Waterfall" style="width:100%">            
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+        
+        <div class="row">
+            <div class="column">
+              <img class="demo cursor" src="Images/mountain view.jpg" style="width:100%" onclick="currentSlide(1)" alt="Beautiful Nigeria Landscapes">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="Images/barbeach lagos.jpeg" style="width:100%" onclick="currentSlide(2)" alt="Lagos Bar Beach">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="Images/rockies.jpeg" style="width:100%" onclick="currentSlide(3)" alt="Mountain View">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="Images/udi hills.jpeg" style="width:100%" onclick="currentSlide(4)" alt="Udi Hills">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="Images/mambila plauteu farm.jpeg" style="width:100%" onclick="currentSlide(5)" alt="Mambila Plauteu Farm">
+            </div>
+            <div class="column">
+              <img class="demo cursor" src="Images/waterfall.jpeg" style="width:100%" onclick="currentSlide(6)" alt="Agbokim Water Fall">
+            </div>
+        </div>        
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}  
+        </script>
+    
+    </div>
+    
+    <main class="home-grid">
+        <section class="gallery-card">            
+            <img class="card-img" src="Images/obudu cattle ranch.jpeg " alt="Obudu Cattle ranch">
+            <a href="gallery.html">            
+                <div class="intro-text">
+                    <h3>Gallery</h3>
+                    <p>I love taking pictures while on adventures and I love sharing that beauty with others.  Take a look around and hopefully you will be inspired to plan a trip of your own!</p>
+                </div>
+            </a>
+        </section>
+        <div class="quote-card">
+            <img class="card-img" src="Images/yakari game reserve.jpeg" alt="Yakari Game Reserve">
+            <div class="quote-text">
+                <h3>Favorite Quote</h3>
+                <div class="quote">"I believe the best way to begin reconnecting humanity's heart, mind, and soul to nature is for us to share our individual stories."<br><br> J. Drew Lanham</div>
+            </div>
+        </div>
+        <section class="blog-card">
+            <img class="card-img" src="Images/jos plautea.jpeg" alt="Centre for tin minning">
+            
+            <a href="blog.html">            
+                <div class="intro-text">
+                    <h3>Travel Blog</h3>
+                    <p>We work hard and play hard. Check our travel blog to see how we pack in so much adventure and highlights of the best things that we have been able to see.</p>
+                </div>
+            </a>
+        </section>    
+    </main>
+    <footer>
+        <p>Richmond's Photography &copy; 2025</p>
+        <p><a href="siteplan.html">Site Plan</a></p>
+        <p><a href="contactus.html">Contact Us</a></p>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank">
+                <img src="Images/facebook.png" alt="fb icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="Images/twitter.png" alt="twitter icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="Images/instagram.png" alt="instagram icon">
+            </a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
